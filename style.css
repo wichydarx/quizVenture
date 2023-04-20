@@ -1,0 +1,185 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: lightslategrey;
+    overflow-y: hidden;
+}
+#question-container {
+    padding: 30px;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    --border-size: 3px;
+    --border-angle: 0turn;
+    width: 60vmin;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    background-image: conic-gradient(
+            from var(--border-angle),
+            #213,
+            #112 50%,
+            #213
+        ),
+        conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    background-size: calc(100% - (var(--border-size) * 2))
+            calc(100% - (var(--border-size) * 2)),
+        cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-animation: bg-spin 3s linear infinite;
+    animation: bg-spin 3s linear infinite;
+}
+@-webkit-keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
+#answer-container {
+    display: none;
+    text-align: left;
+    height: 50vmin;
+    overflow-y: scroll;
+}
+@keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
+#question-container:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+.btn-submit {
+    padding: 5px;
+    margin: 15px auto;
+    background: rgb(1, 171, 171);
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    display: block;
+}
+.true {
+    background: rgb(108, 55, 233);
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+}
+.false {
+    border: 0;
+    border-radius: 5px;
+    background: rgb(150, 73, 1);
+    color: #fff;
+}
+.btn-answer {
+    margin: 0 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.btn-reset {
+    color: white;
+    width: 50%;
+    padding: 5px;
+    margin: auto;
+    background: #08f;
+    border: 0;
+    border-radius: 10px;
+}
+.css-checkbox {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+#inputPreview {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.css-checkbox + label {
+    position: relative;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    margin: 0 10px;
+}
+button:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
+.btn-show {
+    width: 30%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    background: rgba(10, 221, 236, 0.774);
+    border: 0;
+}
+.css-checkbox + label::before {
+    content: " ";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(1, 171, 171);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(1, 171, 171);
+    border-radius: 2px;
+    box-shadow: none;
+}
+.css-checkbox:checked + label::after {
+    content: " ";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+");
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-position: center center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    background-color: transparent;
+    font-size: 10px;
+    height: 22px;
+    width: 22px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #198caf;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #116b86;
+}
