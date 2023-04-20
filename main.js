@@ -219,8 +219,10 @@ resetButton.classList.add("btn-reset");
 resetButton.addEventListener('click',function () {
     const showBtn = document.querySelector(".btn-show");
     const optionsDisplay = document.getElementById("options");
+    const ansDisplay = document.getElementById("answer-container");
     showBtn.style.display = "none";
-    optionsDisplay.style.display = 'block'
+    optionsDisplay.style.display = 'block';
+    ansDisplay.style.display = 'none'
 })
 resetButton.addEventListener("click", resetQuiz);
 
