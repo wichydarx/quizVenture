@@ -55,7 +55,7 @@ let questions = [
         answer: ["François Hollande", "Nicolas Sarkozy"]
     },
     {
-        text: "Quelles sont les langues les plus parlées au monde ?",
+        text: "Quelles sont les deux langues les plus parlées au monde ?",
         type: "choix multiples",
         options: ["Anglais", "Mandarin", "Espagnol", "Français"],
         answer: ["Mandarin","Anglais"]
